@@ -1,5 +1,8 @@
 ##### format-cancer-nordic-twin-heritability-data.R ##################
 
+# This script parses heritability data published by the nordic twin cancer study
+# and plots heritability estimates by cancer type in a forest plot.
+
 library(BoutrosLab.plotting.general);
 
 TABLE <- '/Users/nzeltser/Desktop/Boutros/Germline-somatic/tabula-nordic_twin_cancer.csv';
@@ -20,6 +23,8 @@ parse.norcan.heritability <- function(string) {
   
 }
 
+# function that parses the original confidence interval string into
+# numeric components (left and right confidence interval length).
 split.confidence.interval <- function(ci, mean) {
   
   components <- as.numeric(unlist(strsplit(ci, split = '-')));
